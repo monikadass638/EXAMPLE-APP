@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,3 +18,4 @@ Route::get('/value/{name}' , function ($name) {
 
 });
 Route::redirect('/home','/');
+Route::get('/user' , [UserController::class , 'getUser']);
