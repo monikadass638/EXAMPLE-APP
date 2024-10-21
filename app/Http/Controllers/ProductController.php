@@ -15,9 +15,9 @@ class ProductController extends Controller
     
     function productlogin()
     {
-        if(View::exists('product.signup'))
+        if(View::exists('product.login'))
         {
-            return view('product.signup');
+            return view('product.login');
         }
         else
         {

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,6 @@ Route::view('/product','product');
 Route::get('/product' ,[ProductController::class , 'index']);
 Route::get('/product-login' ,[ProductController::class ,'productlogin']);
 Route::get('/product-data/{data}' ,[ProductController::class ,'productdata']);
+
+//Testing Variable in blade template
+Route::get('/testvariable',[TestvariableController::class ,'testvariable']);
