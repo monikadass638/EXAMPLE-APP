@@ -11,4 +11,9 @@ class UserController extends Controller
     {
         return "Hello My name is User Monika";
     }
+    function userName($name)
+    {
+        echo "My name is Monika ".$name;
+        return view('User.user' ,['name' => $name]);
+    }
 }

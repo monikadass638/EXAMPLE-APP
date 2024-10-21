@@ -19,3 +19,5 @@ Route::get('/value/{name}' , function ($name) {
 });
 Route::redirect('/home','/');
 Route::get('/user' , [UserController::class , 'getUser']);
+
+Route::get('/username/{name}',[UserController::class,'userName']);
