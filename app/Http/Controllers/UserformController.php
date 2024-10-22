@@ -14,6 +14,8 @@ class UserformController extends Controller
         echo $request->email;
         echo "<br/>";
         echo $request->city;
+        echo "<br/>";
+        print_r( $request->skills);
         //return $request;;
     }
 }

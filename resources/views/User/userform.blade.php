@@ -11,9 +11,37 @@
     <div class="input-wrapper">
     <input type="text" name="city" placeholder="Enter your city">
     </div>  
+  
     <div class="input-wrapper">
-    <button>Add new user</button>
-    </div> 
+        <h5>User Skills</h5>
+        <input type="checkbox" name="skills[]" value="PHP" id="php"  />
+        <label for="php">PHP</label>
+        <input type="checkbox" name="skills[]" value="Node" id="node"  />
+        <label for="node">Node</label>
+        <input type="checkbox" name="skills[]" value="Java" id="java"  />
+        <label for="java">Java</label>
+    </div>
+    <div class="input-wrapper">
+        <h5>User Gender</h5>
+        <input type="radio" name="gender" value="Male" id="male"  />
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="Female" id="female"  />
+        <label for="female">Female</label>
+
+    </div>
+    <div class="input-wrapper">
+        <h5>User Country</h5>
+        <select id="country" name="Country">
+            <option value="Australia">Australia</option>
+            <option value="America">America</option>
+            <option value="Canada">Canada</option>
+        </select>
+
+    </div>
+    <div class="input-wrapper">
+        <button>Add new user</button>
+        </div> 
+    
     </form>
     <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
 </div>
@@ -42,4 +70,22 @@
         color:black;
         padding:10px;
     }
+   input[type = "checkbox"]
+    {
+    
+    height: 16px;
+    width: 33px;
+    
+    }
+    input[type="radio"]
+    {
+        height: 16px;
+        width: 33px;
+    }
+    select
+    {
+        height: 30px;
+        width: 95px;
+    }
+    
 </style>
