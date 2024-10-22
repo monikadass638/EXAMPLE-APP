@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserformController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -33,3 +34,7 @@ Route::get('/product-data/{data}' ,[ProductController::class ,'productdata']);
 
 //Testing Variable in blade template
 Route::get('/testvariable',[TestvariableController::class ,'testvariable']);
+//Adding New User
+
+Route::view('/adduser', 'User.userform');
+Route::post('/addnewuser' ,[UserformController::class , 'addNewuser']);
