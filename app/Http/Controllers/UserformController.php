@@ -9,6 +9,13 @@ class UserformController extends Controller
     //
     function addNewuser(Request $request)
     {
+        //validation for fields
+        $request->validate([
+            'username'=>'required',
+            'email' => 'required | email',
+            'city' =>'required |max:20 | min:5',
+            'skills' => 'required'
+        ]);
         echo $request->username;
         echo "<br/>";
         echo $request->email;

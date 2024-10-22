@@ -1,19 +1,34 @@
 <div>
     <h2>Add New User</h2>
+        <div class="input-wrapper">
+        @if($errors->any())
+        @foreach($errors->all() as $err)
+        <div class="error">
+            {{ $err }}
+        </div>
+        @endforeach
+        @endif
+        </div>  
     <form method="POST" action="/addnewuser">
         @csrf
     <div class="input-wrapper">
+    <div><span class="error">@error('username'){{$message}} @enderror</span></div>
     <input type="text" name="username" placeholder="Enter your name">
     </div>
+
     <div class="input-wrapper">
+    <div><span class="error">@error('email'){{$message}} @enderror</span></div>
     <input type="text" name="email" placeholder="Enter your email">
     </div>  
+
     <div class="input-wrapper">
+        <div><span class="error">@error('city'){{$message}} @enderror</span></div>
     <input type="text" name="city" placeholder="Enter your city">
     </div>  
   
     <div class="input-wrapper">
         <h5>User Skills</h5>
+        <div><span class="error">@error('skills'){{$message}} @enderror</span></div>
         <input type="checkbox" name="skills[]" value="PHP" id="php"  />
         <label for="php">PHP</label>
         <input type="checkbox" name="skills[]" value="Node" id="node"  />
@@ -86,6 +101,12 @@
     {
         height: 30px;
         width: 95px;
+    }
+    .error
+    {
+        color:red;
+        font-size:15px;
+        padding:10px;
     }
     
 </style>
