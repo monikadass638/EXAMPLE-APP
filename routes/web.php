@@ -38,3 +38,9 @@ Route::get('/testvariable',[TestvariableController::class ,'testvariable']);
 
 Route::view('/adduser', 'User.userform');
 Route::post('/addnewuser' ,[UserformController::class , 'addNewuser']);
+//getting current url previous url and full url
+Route::view('/Urlhome','Url.home');
+Route::view('/Urlhome/{name}','Url.home');
+Route::view('/Urlabout','Url.about');
+Route::view('/Urlcontact/{name}','Url.contact');
+Route::view('/Urlcontact','Url.contact');
