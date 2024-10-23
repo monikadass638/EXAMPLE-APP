@@ -15,6 +15,10 @@ class UserformController extends Controller
             'email' => 'required | email',
             'city' =>'required |max:20 | min:5',
             'skills' => 'required'
+        ],[
+            'username.required' => 'looks like username field is empty',
+            'email.required' => 'Oh by mistake email field is empty whioch is required',
+            'email.email' => '@ sign is missing in your email'
         ]);
         echo $request->username;
         echo "<br/>";

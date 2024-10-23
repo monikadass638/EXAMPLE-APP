@@ -13,40 +13,42 @@
         @csrf
     <div class="input-wrapper">
     <div><span class="error">@error('username'){{$message}} @enderror</span></div>
-    <input type="text" name="username" placeholder="Enter your name">
+    <input type="text" name="username" placeholder="Enter your name" value="{{ old('username') }}" 
+    class="{{ $errors->first('username') ? 'input-error' : '' }} "/>
     </div>
 
     <div class="input-wrapper">
     <div><span class="error">@error('email'){{$message}} @enderror</span></div>
-    <input type="text" name="email" placeholder="Enter your email">
+    <input type="text" name="email" placeholder="Enter your email" value="{{ old('email') }}" 
+    class="{{ $errors->first('email') ?'input-error' : '' }}" />
     </div>  
 
     <div class="input-wrapper">
         <div><span class="error">@error('city'){{$message}} @enderror</span></div>
-    <input type="text" name="city" placeholder="Enter your city">
+    <input type="text" name="city" placeholder="Enter your city" value="{{ old('city')}}">
     </div>  
   
     <div class="input-wrapper">
         <h5>User Skills</h5>
         <div><span class="error">@error('skills'){{$message}} @enderror</span></div>
-        <input type="checkbox" name="skills[]" value="PHP" id="php"  />
+        <input type="checkbox" name="skills[]" value="PHP" id="php"   />
         <label for="php">PHP</label>
-        <input type="checkbox" name="skills[]" value="Node" id="node"  />
+        <input type="checkbox" name="skills[]" value="Node" id="node" />
         <label for="node">Node</label>
-        <input type="checkbox" name="skills[]" value="Java" id="java"  />
+        <input type="checkbox" name="skills[]" value="Java" id="java"   />
         <label for="java">Java</label>
     </div>
     <div class="input-wrapper">
         <h5>User Gender</h5>
-        <input type="radio" name="gender" value="Male" id="male"  />
+        <input type="radio" name="gender" value="Male" id="male" />
         <label for="male">Male</label>
-        <input type="radio" name="gender" value="Female" id="female"  />
+        <input type="radio" name="gender" value="Female" id="female" "/>
         <label for="female">Female</label>
 
     </div>
     <div class="input-wrapper">
         <h5>User Country</h5>
-        <select id="country" name="Country">
+        <select id="country" name="Country" >
             <option value="Australia">Australia</option>
             <option value="America">America</option>
             <option value="Canada">Canada</option>
@@ -107,6 +109,11 @@
         color:red;
         font-size:15px;
         padding:10px;
+    }
+    .input-error
+    {
+        border:3px solid red;
+        color:orange;
     }
     
 </style>
