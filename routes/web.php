@@ -3,6 +3,7 @@
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\NamerouteController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
@@ -65,4 +66,16 @@ Route::prefix('student/profile')->group(function(){
     Route::get('/show',[GroupController::class ,'show']);
     
     });
+
+//route Group with Controller
+Route::controller(StudentController::class)->group(function(){
+
+Route::get('studentsave' ,'save');
+Route::get('studentshow' , 'show');
+Route::get('studentadd' ,'add');
+Route::get('studentabout/{name}' ,'about');
+
+
+});
+
 
