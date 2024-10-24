@@ -77,5 +77,16 @@ Route::get('studentabout/{name}' ,'about');
 
 
 });
+//middleware group apply to route single
+Route::view('middlewarehome','middleware.home')->middleware('M1');
+
+
+//middleware apply to group of routes
+Route::middleware('M1')->group(function(){
+Route::view('middlewarehome','middleware.home');
+Route::view('middlewareabout','middleware.about');
+
+});
+
 
 
