@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NamerouteController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
@@ -44,3 +45,8 @@ Route::view('/Urlhome/{name}','Url.home');
 Route::view('/Urlabout','Url.about');
 Route::view('/Urlcontact/{name}','Url.contact');
 Route::view('/Urlcontact','Url.contact');
+
+
+//Named URL
+Route::view('home/profile/user','named.home')->name('hm');
+Route::get('show' ,[NamerouteController::class ,'show']);
