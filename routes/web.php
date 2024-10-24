@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\NamerouteController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
 use Illuminate\Support\Facades\Route;
-
+use PHPUnit\Framework\Attributes\Group;
 
 Route::get('/', function () {
     return view('welcome');
@@ -50,3 +51,18 @@ Route::view('/Urlcontact','Url.contact');
 //Named URL
 Route::view('home/profile/user','named.home')->name('hm');
 Route::get('show' ,[NamerouteController::class ,'show']);
+
+//Route Group Prefix
+Route::prefix('student')->group(function(){
+Route::view('/group','groupprefix');
+Route::get('/save',[GroupController::class ,'save']);
+Route::get('/show',[GroupController::class ,'show']);
+
+});
+Route::prefix('student/profile')->group(function(){
+    Route::view('/group','groupprefix');
+    Route::get('/save',[GroupController::class ,'save']);
+    Route::get('/show',[GroupController::class ,'show']);
+    
+    });
+
