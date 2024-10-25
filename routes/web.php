@@ -8,6 +8,9 @@ use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Product;
+use App\Http\Middleware\CountryCheck;
+
 use PHPUnit\Framework\Attributes\Group;
 
 Route::get('/', function () {
@@ -87,6 +90,10 @@ Route::view('middlewarehome','middleware.home');
 Route::view('middlewareabout','middleware.about');
 
 });
+
+//middleware apply to direct routes
+Route::view('middlewarecontact','middleware.contact')->middleware([Product::class , CountryCheck::class]);
+Route::view('middlewareproduct','middleware.product')->middleware(CountryCheck::class);
 
 
 
