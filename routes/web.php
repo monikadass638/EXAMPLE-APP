@@ -8,6 +8,7 @@ use App\Http\Controllers\TestvariableController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
 use App\Http\Controllers\DatabseController;
+use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Product;
 use App\Http\Middleware\CountryCheck;
@@ -98,6 +99,7 @@ Route::view('middlewareproduct','middleware.product')->middleware(CountryCheck::
 
 //checking the database connection
 Route::get('selectusers' , [DatabseController::class ,'select']);
+Route ::get('person' ,[PersonController::class ,'getPerson']);
 
 
 
