@@ -10,6 +10,7 @@ class DatabseController extends Controller
     //
     function select()
     {
-        return DB::select('select * from users');
+        $re = DB::select('select * from users');
+        return view('User.userselect' ,['name'=> $re]);
     }
 }
