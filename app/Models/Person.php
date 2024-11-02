@@ -10,6 +10,7 @@ class Person extends Model
     //
     use HasFactory;
    protected $table = 'college_people';
+   public $timestamps =false;
    function gett()
    {
 

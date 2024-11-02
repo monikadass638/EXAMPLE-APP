@@ -107,3 +107,6 @@ Route ::get('person' ,[PersonController::class ,'getPerson']);
 
 //Database queries
 Route::get('dbdata',[DbController::class ,'index']);
+
+//Databse queries with Model
+Route::get('dbmodelquery' ,[PersonController::class , 'queries']);
