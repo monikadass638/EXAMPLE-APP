@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //global middleware
-        $middleware->append(ageCheck::class);
+        //$middleware->append(ageCheck::class);
         //group middleware on one route
         $middleware->appendToGroup('M1' ,[
             ageCheck::class,

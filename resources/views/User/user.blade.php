@@ -1,3 +1,5 @@
 <div>
-    <h1>My name is Monika {{$name}}</h1>
+   
+    <div>API data Called</div>
+    <div>{{ print_r($data)}}</div>
 </div>
