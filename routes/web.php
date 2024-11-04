@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserformController;
 use App\Http\Controllers\DatabseController;
 use App\Http\Controllers\DbController;
+use App\Http\Controllers\HttpController;
 use App\Http\Controllers\PersonController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Product;
@@ -110,3 +111,7 @@ Route::get('dbdata',[DbController::class ,'index']);
 
 //Databse queries with Model
 Route::get('dbmodelquery' ,[PersonController::class , 'queries']);
+//checkimg http request
+
+Route::view('httpform' , 'http');
+Route::Post('/formlogin' ,[HttpController::class , 'login']);
