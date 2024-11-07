@@ -126,3 +126,7 @@ Route::post('/upload',[UploadController::class ,'upload']);
 //add new client record
 Route::view('client','add-client');
 Route::post('client' ,[ClientController::class ,'add']);
+
+
+//list all the client table data
+Route::get('list-client',[ClientController::class ,'list']);

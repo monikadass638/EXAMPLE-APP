@@ -24,4 +24,10 @@ class ClientController extends Controller
         }
         //return redirect()->to('client' ,['message'=> $mes]);
     }
+
+    function list()
+    {
+        $clients= Client::all();
+        return view('list-client',['data'=>$clients]);
+    }
 }
