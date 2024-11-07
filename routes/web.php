@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\NamerouteController;
 use App\Http\Controllers\ProductController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\DatabseController;
 use App\Http\Controllers\DbController;
 use App\Http\Controllers\HttpController;
 use App\Http\Controllers\PersonController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Product;
 use App\Http\Middleware\CountryCheck;
@@ -115,3 +117,12 @@ Route::get('dbmodelquery' ,[PersonController::class , 'queries']);
 
 Route::view('httpform' , 'http');
 Route::Post('/formlogin' ,[HttpController::class , 'login']);
+
+//Upload Image function
+Route::view('upload','upload');
+Route::post('/upload',[UploadController::class ,'upload']);
+
+
+//add new client record
+Route::view('client','add-client');
+Route::post('client' ,[ClientController::class ,'add']);
