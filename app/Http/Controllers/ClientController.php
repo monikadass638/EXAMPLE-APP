@@ -17,7 +17,7 @@ class ClientController extends Controller
         $client->save();
         if($client)
         {
-            return  "new client has been added";
+            return  redirect('list-client');
         }
         else{
             return  "there is a problem";
@@ -29,5 +29,13 @@ class ClientController extends Controller
     {
         $clients= Client::all();
         return view('list-client',['data'=>$clients]);
+    }
+    function delete($id)
+    {
+        $isDeleted = Client::destroy($id);
+        if($isDeleted)
+        {
+            return redirect('list-client');
+        }
     }
 }

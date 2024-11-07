@@ -130,3 +130,6 @@ Route::post('client' ,[ClientController::class ,'add']);
 
 //list all the client table data
 Route::get('list-client',[ClientController::class ,'list']);
+
+//delete the record of the client
+Route::get('delete/{id}',[ClientController::class ,'delete']);
